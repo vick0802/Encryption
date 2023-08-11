@@ -3,6 +3,12 @@
 <head>
   <title>Encryption</title>
 
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" type="text/css" href="Css.css">
+
+   <!--=============== JAVASCRIPT ===============-->
+   <script src="Java.js"></script>
+
    <!--=============== ICON ===============-->
     <link rel="icon" type="images" href="https://cdn-icons-png.flaticon.com/512/2433/2433538.png">
 
@@ -11,60 +17,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-     text-align: center;
-    }
-
-    h1, p {
-      color: snow;
-    }
-    
-    textarea {
-      width: 400px;
-      height: 200px;
-      border-radius: 15px;
-      border-color: snow;
-      background-color:#66000000;
-      color: snow;
-    }
-    
-   ::placeholder {
-    color: snow;
-    }
-
-    :focus {
-  outline: 1px snow;
-}
-
-    button {
-      padding: 10px 20px;
-      background-color: darkcyan;
-      color: white;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: 0.5s;
-    }
-
-    button:hover{
-      transform: scale(1.1);
-      
-    }
-    svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    display: block;
-    background-color: #0e4166;
-    background-image: linear-gradient(to bottom, rgba(14, 65, 102, 0.86), #0e4166);
-    z-index: -10;
-  }
-  </style>
+   
 </head>
 
 <body>
@@ -116,39 +69,18 @@
           keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
           repeatCount="indefinite" />
       </use>
-  <div class="animate__animated animate__bounce">
-  <h1>ENCRYPTION</h1>
-  <textarea id="inputText" placeholder="Enter text here"></textarea> <br>
-  <button onclick="Encryption()">Encrypt Text</button>
-  <p><strong>RESULT</strong></p>
 
-  <textarea id="Result"></textarea>
+      <div class="animate__animated animate__bounce">
+
+      <h1>ENCRYPTION</h1>
+      <textarea id="inputText" placeholder="Enter text here"></textarea> <br>
+      <button onclick="Encryption()">Encrypt Text</button>
+      <p><strong>RESULT</strong></p>
+
+      <textarea id="Result"></textarea>
   </g>
   </svg>
 </div>
-  <script>
-    function Encryption() {
-  var inputText = document.getElementById('inputText').value;
-  var Result = '';
-
-  for (var i = 0; i < inputText.length; i++) {
-    var charCode = inputText.charCodeAt(i);
-
-    // Shift each character by 3 positions
-    if (charCode >= 65 && charCode <= 90) {
-      // Uppercase letters (A-Z)
-      charCode = ((charCode - 65 + 3) % 26) + 65;
-    } else if (charCode >= 97 && charCode <= 122) {
-      // Lowercase letters (a-z)
-      charCode = ((charCode - 97 + 3) % 26) + 97;
-    }
-
-    Result += String.fromCharCode(charCode);
-  }
-
-  document.getElementById('Result').textContent = Result;
-}
-
-  </script>
+ 
 </body>
 </html>
